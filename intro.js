@@ -38,9 +38,23 @@ var slider3 = document.querySelector(".slider3")
 var closeSlider3 = document.querySelector(".fa-xmark")
 mail.onclick = function(){
     slider3.classList.add("active")
+    // Ensure title, message and signature are visible when popup opens
+    var titleEl = document.getElementById('name-cua-em')
+    var msgEl = document.getElementById('message-content')
+    var sigEl = document.querySelector('.fixedContent')
+    if(titleEl){ titleEl.style.display = 'block'; titleEl.style.opacity = '1' }
+    if(msgEl){ msgEl.style.display = 'block'; msgEl.style.opacity = '1' }
+    if(sigEl){ sigEl.style.display = 'block'; sigEl.style.opacity = '1' }
 }
 closeSlider3.addEventListener('click', function(){
     slider3.classList.remove('active')
+    // Reset any inline styles so CSS controls hide/show after close
+    var titleEl = document.getElementById('name-cua-em')
+    var msgEl = document.getElementById('message-content')
+    var sigEl = document.querySelector('.fixedContent')
+    if(titleEl){ titleEl.style.display = ''; titleEl.style.opacity = '' }
+    if(msgEl){ msgEl.style.display = ''; msgEl.style.opacity = '' }
+    if(sigEl){ sigEl.style.display = ''; sigEl.style.opacity = '' }
 })
 
 
